@@ -1,0 +1,306 @@
+---
+openapi: 3.0.3
+info:
+  title: banco_guatemala
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: "http://localhost"
+paths:
+  /service.php/admin/login:
+    post:
+      summary: Login Administrador
+      description: Login Administrador
+      operationId: loginAdministrador
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pass:
+                  type: string
+                  example: admin1234
+                user:
+                  type: string
+                  example: admin
+            example:
+              pass: admin1234
+              user: admin
+      responses:
+        "200":
+          description: ""
+  /service.php/cajero:
+    get:
+      summary: GetCajeros
+      description: GetCajeros
+      operationId: getCajeros
+      responses:
+        "200":
+          description: ""
+    put:
+      summary: PutCajero
+      description: PutCajero
+      operationId: putCajero
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: number
+                  example: 2
+                status:
+                  type: number
+                  example: 0
+            example:
+              id: 2
+              status: 0
+      responses:
+        "200":
+          description: ""
+  /service.php/cajero/add:
+    post:
+      summary: PostCajero
+      description: PostCajero
+      operationId: postCajero
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id_admin:
+                  type: number
+                  example: 1
+                nombre:
+                  type: string
+                  example: Cajero prueba5
+                pass:
+                  type: string
+                  example: cajero1
+                usuario:
+                  type: string
+                  example: cajero5
+            example:
+              id_admin: 1
+              nombre: Cajero prueba5
+              pass: cajero1
+              usuario: cajero5
+      responses:
+        "200":
+          description: ""
+  /service.php/cajero/login:
+    post:
+      summary: Login Cajero
+      description: Login Cajero
+      operationId: loginCajero
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pass:
+                  type: string
+                  example: cajero1
+                user:
+                  type: string
+                  example: cajero4
+            example:
+              pass: cajero1
+              user: cajero4
+      responses:
+        "200":
+          description: ""
+  /service.php/cuenta:
+    get:
+      summary: getCuentaDetalle
+      description: getCuentaDetalle
+      operationId: getCuentaDetalle
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: "1"
+      responses:
+        "200":
+          description: ""
+    post:
+      summary: postCuenta
+      description: postCuenta
+      operationId: postCuenta
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                DPI:
+                  type: string
+                  example: "1234567890123"
+                nombre:
+                  type: string
+                  example: Cuenta de prueba
+            example:
+              DPI: "1234567890123"
+              nombre: Cuenta de prueba
+      responses:
+        "200":
+          description: ""
+  /service.php/tercero:
+    get:
+      summary: getTercero
+      description: getTercero
+      operationId: getTercero
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: "1"
+      responses:
+        "200":
+          description: ""
+  /service.php/tercero/add:
+    post:
+      summary: PostTercero
+      description: PostTercero
+      operationId: postTercero
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idDestino:
+                  type: string
+                  example: "2"
+                idOrigen:
+                  type: string
+                  example: "1"
+            example:
+              idDestino: "2"
+              idOrigen: "1"
+      responses:
+        "200":
+          description: ""
+  /service.php/tercero/transac:
+    post:
+      summary: postTransaccionTerceros
+      description: postTransaccionTerceros
+      operationId: postTransaccionTerceros
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                destino:
+                  type: string
+                  example: "2"
+                fecha:
+                  type: string
+                  example: "10/10/2021 00:36:51"
+                monto:
+                  type: string
+                  example: "1"
+                origen:
+                  type: string
+                  example: "1"
+            example:
+              destino: "2"
+              fecha: "10/10/2021 00:36:51"
+              monto: "1"
+              origen: "1"
+      responses:
+        "200":
+          description: ""
+  /service.php/transac/caja:
+    post:
+      summary: postTransaccionCaja
+      description: postTransaccionCaja
+      operationId: postTransaccionCaja
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cuenta:
+                  type: number
+                  example: 1
+                fecha:
+                  type: string
+                  example: "10/10/2021 13:12:20"
+                idCajero:
+                  type: number
+                  example: 4
+                monto:
+                  type: string
+                  example: "1.00"
+            example:
+              cuenta: 1
+              fecha: "10/10/2021 13:12:20"
+              idCajero: 4
+              monto: "1.00"
+      responses:
+        "200":
+          description: ""
+  /service.php/user/create:
+    post:
+      summary: postUsuario
+      description: postUsuario
+      operationId: postUsuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                correo:
+                  type: string
+                  example: usuario@correo.com
+                cuenta:
+                  type: string
+                  example: "1"
+                pass:
+                  type: string
+                  example: usuario1234
+                telefono:
+                  type: string
+                  example: "22222222"
+            example:
+              correo: usuario@correo.com
+              cuenta: "1"
+              pass: usuario1234
+              telefono: "22222222"
+      responses:
+        "200":
+          description: ""
+  /service.php/user/login:
+    post:
+      summary: Login Usuario
+      description: Login Usuario
+      operationId: loginUsuario
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pass:
+                  type: string
+                  example: usuario1234
+                user:
+                  type: string
+                  example: usuario@correo.com
+            example:
+              pass: usuario1234
+              user: usuario@correo.com
+      responses:
+        "200":
+          description: ""
+tags: []

@@ -1,0 +1,202 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+@font-face {
+  font-family: "work-sans";
+  src: url("./fonts/work-sans/WorkSans-VariableFont_wght.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  font-family: 'work-sans', Arial, Helvetica, sans-serif;
+  background-color: #F3F1F1 !important;
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo>.name{
+  color:white;
+}
+
+.logo>img{
+  width: 80px;
+  height: 80px;
+  content: url("../svg/logo.svg");
+}
+
+.nav-banco{
+  border-radius: 0 0 5px 5px;
+  padding:0 !important;
+}
+
+#navbar-item-container{
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+#navtoggler{
+  color: white;
+}
+
+.nav-container{
+  background: #0024A5;
+  border: 1.1186px solid #231F20;
+  padding: 10px;
+}
+
+.nav-items{
+  display: flex;
+}
+
+.nav-items li{
+  list-style: none;
+  margin-right: 70px;
+}
+
+.nav-items li:nth-last-of-type(1){
+  margin-right: 10px;
+}
+
+.nav-items li a{
+  color:white;
+  text-decoration: none;
+}
+
+.wrapper{
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+#login-form-container{
+  max-width: 900px;
+}
+
+.card-title{
+  color:#0021C1;
+}
+
+.navbar-admin{
+  background:#2741FF;
+  color:white;
+}
+
+.full-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 1.25rem;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  line-height: 3.9;
+  height: 100px;
+}
+
+.full-nav ul{
+  flex-direction: row;
+}
+
+.navbar-admin li:hover{
+  border-bottom: 2px solid white;
+}
+
+.navbar-admin li a:hover{
+  color:white !important;
+}
+
+.exit-btn{
+  color:white !important;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.menu-btn{
+  background-color: #2741FF !important;
+  text-align: left !important;
+  max-width: 760px;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  font-size: 1.20rem !important;
+}
+
+.btn-banco{
+  background-color: #2741FF !important;
+}
+
+.menu-btn>.bi{
+  margin-right:10px;
+}
+
+table>tbody{
+  color:#2741FF;
+}
+
+.mantenimiento-tbl td:nth-child(1){
+  text-align: right;
+}
+
+.bank-graph{
+  display: flex;
+  justify-content: space-between;
+}
+
+.responsive-alt{
+  display: none;
+}
+
+.graph-placeholder{
+  font-size: 1.2rem;
+  text-align: right;
+  margin: 10px;
+}
+
+.max-33{
+  max-width: 33%;
+}
+
+@media (max-width:576px){
+  .logo>.name{
+    display: none;
+  }
+  .logo>img{
+    width: 50px;
+  }
+  .nav-container{
+    padding: 0;
+  }
+  .menu-btn{
+    padding: .375rem .75rem !important;
+  }
+  .mantenimiento-tbl td:nth-child(1), th:nth-child(1){
+    display: none;
+  }
+  .max-33{
+    max-width: 100%;
+  }
+}
+
+@media (max-width:991px){
+  .full-nav{
+    display: none;
+  }
+  #exit-btn-item{
+    display: none;
+  }
+  #nombre-usuario{
+    display: none;
+  }
+  .graph-placeholder{
+    display: none;
+  }
+  .responsive-alt{
+    display: initial;
+  }
+}

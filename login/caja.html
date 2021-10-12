@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ingreso de Caja</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg mb-3 nav-banco" id="login-nav">
+        <!--cargado programaticamente-->
+    </nav>
+
+    <div class="container" id="login-form-container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">
+                    Ingrese al sistema
+                </h1>
+                <form id="login-form" class="login-form">
+                    <div class="mb-3">
+                        <label class="form-label" for="txtUsuario">Usuario</label>
+                        <input class="form-control" id="txtUsuario" type="text" placeholder="Usuario">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="passUsuario">Contraseña</label>
+                        <input class="form-control" id="passUsuario" type="password" placeholder="Contraseña">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="button" id="cajaSession">Iniciar sesión</button>
+                    </div>
+                    <div id="warn"></div>
+                    <div class="mt-3 mb-3">
+                        <a href="#" class="olvido-contraseña">Olvido su contraseña?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../js/login-basic.js" type="module"></script>
+</body>
+</html>
